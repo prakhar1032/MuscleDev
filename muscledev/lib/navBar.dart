@@ -1,5 +1,6 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:muscledev/home/home_page.dart';
 import 'package:muscledev/styling/colors.dart';
 
 class NavBar extends StatefulWidget {
@@ -26,7 +27,7 @@ class _NavBarState extends State<NavBar> {
 
   /// widget list
   final List<Widget> bottomBarPages = [
-    const Page1(),
+    const HomePage(),
     const Page2(),
     const Page3(),
     const Page4(),
@@ -46,21 +47,16 @@ class _NavBarState extends State<NavBar> {
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: Colors.white,
+              color: CustomColors.bagroundColor,
+
               showLabel: false,
               shadowElevation: 5,
-              kBottomRadius: 28.0,
-              // notchShader: const SweepGradient(
-              //   startAngle: 0,
-              //   endAngle: pi / 2,
-              //   colors: [Colors.red, Colors.green, Colors.orange],
-              //   tileMode: TileMode.mirror,
-              // ).createShader(Rect.fromCircle(center: Offset.zero, radius: 8.0)),
-              notchColor: Colors.black87,
+              kBottomRadius: 0.0,
+              notchColor: Colors.black,
 
               /// restart app if you change removeMargins
               removeMargins: false,
-              bottomBarWidth: 500,
+              bottomBarWidth: 300,
               showShadow: false,
               durationInMilliSeconds: 300,
               elevation: 1,
@@ -68,7 +64,7 @@ class _NavBarState extends State<NavBar> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.home_filled,
-                    color: Colors.blueGrey,
+                    color: Colors.white,
                   ),
                   activeItem: Icon(
                     Icons.home_filled,
@@ -79,7 +75,7 @@ class _NavBarState extends State<NavBar> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.star,
-                    color: Colors.blueGrey,
+                    color: Colors.white,
                   ),
                   activeItem: Icon(
                     Icons.star,
@@ -90,7 +86,7 @@ class _NavBarState extends State<NavBar> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.settings,
-                    color: Colors.blueGrey,
+                    color: Colors.white,
                   ),
                   activeItem: Icon(
                     Icons.settings,
@@ -101,7 +97,7 @@ class _NavBarState extends State<NavBar> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.person,
-                    color: Colors.blueGrey,
+                    color: Colors.white,
                   ),
                   activeItem: Icon(
                     Icons.person,
@@ -119,17 +115,6 @@ class _NavBarState extends State<NavBar> {
             )
           : null,
     );
-  }
-}
-
-class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        color: CustomColors.bagroundColor,
-        child: const Center(child: Text('Page 1')));
   }
 }
 

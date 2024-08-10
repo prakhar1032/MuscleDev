@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:muscledev/home_page.dart';
-import 'package:muscledev/login.dart';
+import 'package:muscledev/home/home_page.dart';
+import 'package:muscledev/login/login.dart';
 import 'package:muscledev/navBar.dart';
-import 'package:muscledev/onboarding_screen.dart';
+import 'package:muscledev/onboarding/onboarding_screen.dart';
 import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/userDetails/gender.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => LoginScreen(),
+              builder: (context) => UserGender(),
             ));
       },
     );

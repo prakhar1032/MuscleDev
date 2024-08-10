@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
-import 'package:muscledev/home_page.dart';
+import 'package:muscledev/home/home_page.dart';
 import 'package:muscledev/styling/colors.dart';
 
 class OnboardingPage extends StatefulWidget {
