@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muscledev/home/home_page.dart';
 import 'package:muscledev/login/login.dart';
+import 'package:muscledev/mainpage.dart';
 import 'package:muscledev/navBar.dart';
 import 'package:muscledev/onboarding/onboarding_screen.dart';
 import 'package:muscledev/styling/colors.dart';

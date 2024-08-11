@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muscledev/mainpage.dart';
 import 'package:muscledev/styling/colors.dart';
 import 'package:wheel_slider/wheel_slider.dart';
 
@@ -172,11 +173,11 @@ class _UserActivityLevelState extends State<UserActivityLevel> {
                         borderRadius: BorderRadius.circular(40)),
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => UserGoal(),
-                        //     ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MainPage(),
+                            ));
                       },
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,

@@ -5,24 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:muscledev/styling/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// Model class representing a person
-class Person {
-  String name;
-  int age;
-
-  Person({required this.name, required this.age});
-
-  // Serialize Person object to JSON
-  Map<String, dynamic> toJson() {
-    return {'name': name, 'age': age};
-  }
-
-  // Deserialize JSON to Person object
-  factory Person.fromJson(Map<String, dynamic> json) {
-    return Person(name: json['name'], age: json['age']);
-  }
-}
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -31,13 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Person> persons = [];
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

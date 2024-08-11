@@ -12,6 +12,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int selectedIndex = 0;
+
+  void onOptionSelected(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,68 +129,123 @@ class _MainPageState extends State<MainPage> {
             SizedBox(
               height: 15,
             ),
-            Expanded(
-                child: DefaultTabController(
-              length: 3,
-              child: Column(
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TabBar(
-                    indicatorColor: Colors.transparent,
-                    unselectedLabelColor: Colors.white,
-                    indicator: ShapeDecoration(
-                      color: CustomColors.greenColor,
-                      shape: StadiumBorder(),
-                    ),
-                    tabs: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: Tab(
-                          text: 'Drivers',
+                  GestureDetector(
+                    onTap: () => onOptionSelected(0),
+                    child: Container(
+                      height: 36,
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      margin: EdgeInsets.only(left: 16, right: 8),
+                      decoration: selectedIndex == 0
+                          ? SelectionDecorations.getSelectedDecoration()
+                          : SelectionDecorations.getNonSelectedDecoration(),
+                      child: Center(
+                        child: Text(
+                          'Beginner',
+                          style: selectedIndex == 0
+                              ? TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                )
+                              : TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                ),
                         ),
                       ),
-                      Tab(
-                        text: 'Vehicles',
-                      ),
-                      Tab(
-                        text: 'Vehicles',
-                      ),
-                    ],
+                    ),
                   ),
-                  SizedBox(
-                    height: 10,
+                  GestureDetector(
+                    onTap: () => onOptionSelected(1),
+                    child: Container(
+                      height: 36,
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      margin: EdgeInsets.only(right: 8),
+                      decoration: selectedIndex == 1
+                          ? SelectionDecorations.getSelectedDecoration()
+                          : SelectionDecorations.getNonSelectedDecoration(),
+                      child: Center(
+                        child: Text(
+                          'Intermediate',
+                          style: selectedIndex == 1
+                              ? TextStyle(
+                                  color: CustomColors.lightblack,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                )
+                              : TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                ),
+                        ),
+                      ),
+                    ),
                   ),
-                  Expanded(
-                      child: TabBarView(
-                    children: [
-                      Builder(
-                        builder: (context) {
-                          return Container(
-                            child: Text("exercise"),
-                          );
-                        },
+                  GestureDetector(
+                    onTap: () => onOptionSelected(2),
+                    child: Container(
+                      height: 36,
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      margin: EdgeInsets.only(right: 8),
+                      decoration: selectedIndex == 2
+                          ? SelectionDecorations.getSelectedDecoration()
+                          : SelectionDecorations.getNonSelectedDecoration(),
+                      child: Center(
+                        child: Text(
+                          'Advance',
+                          style: selectedIndex == 2
+                              ? TextStyle(
+                                  color: CustomColors.lightblack,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                )
+                              : TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'OpenSans',
+                                ),
+                        ),
                       ),
-                      Builder(
-                        builder: (context) {
-                          return Container(
-                            child: Text("exercise"),
-                          );
-                        },
-                      ),
-                      Builder(
-                        builder: (context) {
-                          return Container(
-                            child: Text("exercise"),
-                          );
-                        },
-                      )
-                    ],
-                  ))
+                    ),
+                  ),
                 ],
               ),
-            ))
+            ),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class SelectionDecorations {
+  static BoxDecoration getSelectedDecoration() {
+    return BoxDecoration(
+      color: CustomColors.greenColor,
+      borderRadius: BorderRadius.circular(18),
+    );
+  }
+
+  static BoxDecoration getNonSelectedDecoration() {
+    return BoxDecoration(
+      color: CustomColors.lightblack,
+      borderRadius: BorderRadius.circular(18),
     );
   }
 }
