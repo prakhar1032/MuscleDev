@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:muscledev/mainpage.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/pages/mainpage.dart';
+import 'package:muscledev/pages/navBar.dart';
+import 'package:muscledev/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -187,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MainPage(),
+                              builder: (context) => NavBar(),
                             ));
                       },
                       child: Row(

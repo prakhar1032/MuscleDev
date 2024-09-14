@@ -1,7 +1,8 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:muscledev/home/home_page.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/pages/home/home_page.dart';
+import 'package:muscledev/pages/mainpage.dart';
+import 'package:muscledev/utils/colors.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -27,8 +28,8 @@ class _NavBarState extends State<NavBar> {
 
   /// widget list
   final List<Widget> bottomBarPages = [
+    const MainPage(),
     const HomePage(),
-    const Page2(),
     const Page3(),
     const Page4(),
   ];
@@ -47,7 +48,7 @@ class _NavBarState extends State<NavBar> {
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: CustomColors.bagroundColor,
+              color: CustomColors.lightblack,
 
               showLabel: false,
               shadowElevation: 5,

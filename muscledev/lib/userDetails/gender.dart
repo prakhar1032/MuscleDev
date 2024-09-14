@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/utils/colors.dart';
 import 'package:muscledev/userDetails/age.dart';
 
 class UserGender extends StatefulWidget {

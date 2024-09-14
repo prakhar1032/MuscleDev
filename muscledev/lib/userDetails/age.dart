@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/utils/colors.dart';
 import 'package:muscledev/userDetails/weight.dart';
 import 'package:wheel_slider/wheel_slider.dart';
 

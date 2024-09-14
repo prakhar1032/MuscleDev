@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/utils/colors.dart';
 import 'package:muscledev/userDetails/goal.dart';
 import 'package:wheel_slider/wheel_slider.dart';
 

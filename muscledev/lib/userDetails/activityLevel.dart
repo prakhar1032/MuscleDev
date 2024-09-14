@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muscledev/mainpage.dart';
-import 'package:muscledev/styling/colors.dart';
+import 'package:muscledev/pages/mainpage.dart';
+import 'package:muscledev/utils/colors.dart';
 import 'package:wheel_slider/wheel_slider.dart';
 
 class UserActivityLevel extends StatefulWidget {
