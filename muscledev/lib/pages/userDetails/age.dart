@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:muscledev/utils/colors.dart';
-import 'package:muscledev/userDetails/height.dart';
+import 'package:muscledev/pages/userDetails/weight.dart';
 import 'package:wheel_slider/wheel_slider.dart';
 
-class UserWeight extends StatefulWidget {
-  const UserWeight({super.key});
+class UserAge extends StatefulWidget {
+  const UserAge({super.key});
 
   @override
-  State<UserWeight> createState() => _UserWeightState();
+  State<UserAge> createState() => _UserAgeState();
 }
 
-class _UserWeightState extends State<UserWeight> {
+class _UserAgeState extends State<UserAge> {
   int _nCurrentValue = 0;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _UserWeightState extends State<UserWeight> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "What’s your weight?",
+                  "How old are you ?",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -44,7 +45,7 @@ class _UserWeightState extends State<UserWeight> {
               children: [
                 Text(
                   textAlign: TextAlign.center,
-                  "You can always change this later",
+                  "This helps us create your personalized plan",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 10,
@@ -60,36 +61,37 @@ class _UserWeightState extends State<UserWeight> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      Row(
+                      Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
-                              height: 50, // Adjust height as needed
-                              width: 2,
-                              color: CustomColors.greenColor),
+                            height: 2,
+                            width: 100,
+                            color: CustomColors.greenColor,
+                          ),
                           SizedBox(
-                              width:
-                                  50), // Adjust width to move lines closer or farther apart
+                              height:
+                                  50), // Adjust this height to move lines closer or farther apart
                           Container(
-                              height: 50,
-                              width: 2,
-                              color: CustomColors.greenColor),
+                            height: 2,
+                            width: 100,
+                            color: CustomColors.greenColor,
+                          ),
                         ],
                       ),
                       WheelSlider.number(
                         isVibrate: true,
                         squeeze: 0.6,
-                        horizontalListWidth:
-                            MediaQuery.sizeOf(context).width * 1.0,
-                        horizontal: true,
-                        totalCount: 150,
+                        horizontal: false,
+                        perspective: 0.01,
+                        totalCount: 99,
                         initValue: 0,
                         selectedNumberStyle: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 30.0,
                           color: CustomColors.greenColor,
                         ),
                         unSelectedNumberStyle: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 30.0,
                           color: Colors.white,
                         ),
                         currentIndex: _nCurrentValue,
@@ -101,17 +103,6 @@ class _UserWeightState extends State<UserWeight> {
                         hapticFeedbackType: HapticFeedbackType.heavyImpact,
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Kg",
-                    style: TextStyle(
-                      color: CustomColors.greenColor,
-                      fontSize: 18,
-                      fontFamily: 'Fontspring',
-                    ),
                   ),
                 ],
               ),
@@ -151,7 +142,7 @@ class _UserWeightState extends State<UserWeight> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UserHeight(),
+                              builder: (context) => UserWeight(),
                             ));
                       },
                       child: Row(

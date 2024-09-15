@@ -30,61 +30,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
           ),
           SizedBox(height: 20), // Add some spacing between the image and text
           Text(
-            'Welcome to DevMuscle',
-            style: TextStyle(
-                fontSize: 24,
-                letterSpacing: 1,
-                color: Colors.white,
-                fontFamily: 'Fontspring',
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 15), // Add some spacing between the text and subtext
-          Text(
-            'Achieve your fitness goals with personalized workout plans, track your progress, and stay motivated on your journey to a healthier you.',
+            'Track Your Workouts',
             style: TextStyle(
                 fontSize: 20,
                 letterSpacing: 0.5,
-                color: Colors.white,
-                fontFamily: 'Fontspring',
-                fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-      decoration: PageDecoration(pageColor: CustomColors.bagroundColor),
-      titleWidget: SizedBox.shrink(), // Effectively a zero-height widget
-    ),
-    PageViewModel(
-      bodyWidget: Column(
-        mainAxisAlignment: MainAxisAlignment.start, // Stick to the top
-        crossAxisAlignment: CrossAxisAlignment.stretch, // Stretch to full width
-        children: [
-          Container(
-            child: Image.asset(
-              'assets/images/onboard2.png',
-              fit: BoxFit.contain,
-              width: double.infinity,
-            ),
-          ),
-          SizedBox(height: 20), // Add some spacing between the image and text
-          Text(
-            'You can count on us.',
-            style: TextStyle(
-                fontSize: 24,
-                letterSpacing: 0.5,
-                color: Color(0xff545454),
+                color: CustomColors.greenColor,
                 fontFamily: 'Urbanist',
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 15), // Add some spacing between the text and subtext
           Text(
-            'Top - Tier Shipping and Delivery\nServices across NER',
+            'Effortlessly log workouts, track progress, and monitor calories burned—all in one place. Whether you’re a beginner or a pro, we’ve got you covered.',
             style: TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 letterSpacing: 0.5,
-                color: Color(0xff939393),
+                color: Colors.white,
                 fontFamily: 'Urbanist',
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
@@ -108,22 +69,61 @@ class _OnboardingPageState extends State<OnboardingPage> {
           ),
           SizedBox(height: 20), // Add some spacing between the image and text
           Text(
-            'Send anything across NER',
+            'Personalized Workout Plans',
             style: TextStyle(
-                fontSize: 24,
+                fontSize: 20,
                 letterSpacing: 0.5,
-                color: Color(0xff545454),
+                color: CustomColors.greenColor,
                 fontFamily: 'Urbanist',
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 15), // Add some spacing between the text and subtext
           Text(
-            'Delivery solutions made easier,\nfaster and safer.',
+            'Get workout recommendations based on your fitness goals. Our AI-powered suggestions ensure you’re always improving with the right exercises.',
+            style: TextStyle(
+                fontSize: 16,
+                letterSpacing: 0.5,
+                color: Colors.white,
+                fontFamily: 'Urbanist',
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+      decoration: PageDecoration(pageColor: CustomColors.bagroundColor),
+      titleWidget: SizedBox.shrink(), // Effectively a zero-height widget
+    ),
+    PageViewModel(
+      bodyWidget: Column(
+        mainAxisAlignment: MainAxisAlignment.start, // Stick to the top
+        crossAxisAlignment: CrossAxisAlignment.stretch, // Stretch to full width
+        children: [
+          Container(
+            child: Image.asset(
+              'assets/images/onboard2.png',
+              fit: BoxFit.contain,
+              width: double.infinity,
+            ),
+          ),
+          SizedBox(height: 20), // Add some spacing between the image and text
+          Text(
+            'AI-Powered Video Analysis',
             style: TextStyle(
                 fontSize: 20,
                 letterSpacing: 0.5,
-                color: Color(0xff939393),
+                color: CustomColors.greenColor,
+                fontFamily: 'Urbanist',
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 15), // Add some spacing between the text and subtext
+          Text(
+            'Record your workouts and receive instant feedback on your form. Our AI provides real-time tips to help you achieve the best results safely.',
+            style: TextStyle(
+                fontSize: 16,
+                letterSpacing: 0.5,
+                color: Colors.white,
                 fontFamily: 'Urbanist',
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,

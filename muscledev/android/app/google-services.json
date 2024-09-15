@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "70165939027",
+    "project_id": "devmuscle-7594e",
+    "storage_bucket": "devmuscle-7594e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70165939027:android:f1dff98c78104b9b3697a6",
+        "android_client_info": {
+          "package_name": "com.example.muscledev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70165939027-11sj1p4geqpl9caumqr97gb7sdu4fq8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.muscledev",
+            "certificate_hash": "65ee844019b85778db09301bfc00833f07af7dd5"
+          }
+        },
+        {
+          "client_id": "70165939027-8vq9r5oua3oh6fd9qgtjvf2g6fpejlrd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Qs6DE5EiOG3GJl8gVFAwe7nT-ktqLHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70165939027-8vq9r5oua3oh6fd9qgtjvf2g6fpejlrd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

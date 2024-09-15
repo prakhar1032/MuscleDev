@@ -1,18 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:muscledev/utils/colors.dart';
-import 'package:muscledev/userDetails/weight.dart';
-import 'package:wheel_slider/wheel_slider.dart';
+import 'package:muscledev/pages/userDetails/age.dart';
 
-class UserAge extends StatefulWidget {
-  const UserAge({super.key});
+class UserGender extends StatefulWidget {
+  const UserGender({super.key});
 
   @override
-  State<UserAge> createState() => _UserAgeState();
+  State<UserGender> createState() => _UserGenderState();
 }
 
-class _UserAgeState extends State<UserAge> {
-  int _nCurrentValue = 0;
+class _UserGenderState extends State<UserGender> {
+  bool maleSelected = true;
+  bool femaleSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +30,7 @@ class _UserAgeState extends State<UserAge> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "How old are you ?",
+                  "Tell Us About Yourself",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -45,7 +47,7 @@ class _UserAgeState extends State<UserAge> {
               children: [
                 Text(
                   textAlign: TextAlign.center,
-                  "This helps us create your personalized plan",
+                  "To give you a better experience we need\nto know your gender",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 10,
@@ -58,79 +60,95 @@ class _UserAgeState extends State<UserAge> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        maleSelected = true;
+                        femaleSelected = false;
+                      });
+                    },
+                    child: Container(
+                      height: 140,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          color: maleSelected == true
+                              ? CustomColors.greenColor
+                              : CustomColors.lightblack,
+                          shape: BoxShape.circle),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            height: 2,
-                            width: 100,
-                            color: CustomColors.greenColor,
-                          ),
+                          maleSelected == true
+                              ? Image.asset("assets/images/maleblack.png")
+                              : Image.asset("assets/images/malewhite.png"),
                           SizedBox(
-                              height:
-                                  50), // Adjust this height to move lines closer or farther apart
-                          Container(
-                            height: 2,
-                            width: 100,
-                            color: CustomColors.greenColor,
+                            height: 10,
+                          ),
+                          Text(
+                            textAlign: TextAlign.center,
+                            "Male",
+                            style: TextStyle(
+                              color: maleSelected == true
+                                  ? Colors.black
+                                  : Colors.white,
+                              fontSize: 10,
+                              fontFamily: 'Fontspring',
+                            ),
                           ),
                         ],
                       ),
-                      WheelSlider.number(
-                        isVibrate: true,
-                        squeeze: 0.6,
-                        horizontal: false,
-                        perspective: 0.01,
-                        totalCount: 99,
-                        initValue: 0,
-                        selectedNumberStyle: TextStyle(
-                          fontSize: 30.0,
-                          color: CustomColors.greenColor,
-                        ),
-                        unSelectedNumberStyle: TextStyle(
-                          fontSize: 30.0,
-                          color: Colors.white,
-                        ),
-                        currentIndex: _nCurrentValue,
-                        onValueChanged: (val) {
-                          setState(() {
-                            _nCurrentValue = val;
-                          });
-                        },
-                        hapticFeedbackType: HapticFeedbackType.heavyImpact,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        maleSelected = false;
+                        femaleSelected = true;
+                      });
+                    },
+                    child: Container(
+                      height: 140,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          color: femaleSelected == true
+                              ? CustomColors.greenColor
+                              : CustomColors.lightblack,
+                          shape: BoxShape.circle),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          femaleSelected == true
+                              ? Image.asset("assets/images/femaleblack.png")
+                              : Image.asset("assets/images/femalewhite.png"),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            textAlign: TextAlign.center,
+                            "Female",
+                            style: TextStyle(
+                              color: femaleSelected == true
+                                  ? Colors.black
+                                  : Colors.white,
+                              fontSize: 10,
+                              fontFamily: 'Fontspring',
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 15, bottom: 15, left: 15),
+              padding: EdgeInsets.only(right: 15, bottom: 15),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      child: Center(
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: CustomColors.lightblack,
-                          shape: BoxShape.circle),
-                    ),
-                  ),
                   Container(
                     width: MediaQuery.sizeOf(context).width * 0.50,
                     height: 50,
@@ -142,7 +160,7 @@ class _UserAgeState extends State<UserAge> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UserWeight(),
+                              builder: (context) => UserAge(),
                             ));
                       },
                       child: Row(

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:muscledev/auth/google_sign_in.dart';
 import 'package:muscledev/pages/mainpage.dart';
 import 'package:muscledev/pages/navBar.dart';
+import 'package:muscledev/pages/userDetails/gender.dart';
 import 'package:muscledev/utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -151,16 +153,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     width: 0,
                   ),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: Color(0xff3A3A3C),
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
-                    child: Center(
-                      child: Image.asset(
-                        "assets/images/google.png",
-                        height: 25,
+                  GestureDetector(
+                    onTap: () {
+                      print("gSignin");
+                      googleSignIn.signInWithGoogle();
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          color: Color(0xff3A3A3C),
+                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/google.png",
+                          height: 25,
+                        ),
                       ),
                     ),
                   ),
@@ -188,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => NavBar(),
+                              builder: (context) => UserGender(),
                             ));
                       },
                       child: Row(

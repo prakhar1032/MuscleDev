@@ -1,8 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:muscledev/pages/onboarding/onboarding_screen.dart';
 import 'package:muscledev/utils/colors.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey:
+          "AIzaSyD5Qs6DE5EiOG3GJl8gVFAwe7nT-ktqLHk", // paste your api key here
+      appId:
+          "1:70165939027:android:f1dff98c78104b9b3697a6", //paste your app id here
+      messagingSenderId: "70165939027", //paste your messagingSenderId here
+      projectId: "devmuscle-7594e", //paste your project id here
+    ),
+  );
   runApp(const MyApp());
 }
 
